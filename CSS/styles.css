@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,35 +6,47 @@ body {
     box-sizing: border-box;
 }
 
+/* Header Styling */
 header {
-    background-image: url("blockchainbild.png"); /* Pfad zum Bild */
-    background-size: cover; /* Skaliert das Bild, um den gesamten Header auszufüllen */
-    background-position: center; /* Zentriert das Bild im Header */
-    color: #000000; /* Schriftfarbe, um besser auf dem Bild sichtbar zu sein */
-    padding: 60px 20px; /* Abstand, um Inhalt innerhalb des Headers zu platzieren */
+    background-size: cover; /* Scale image to fill header */
+    background-position: center; /* Center image in the header */
+    color: #ffffff; /* Text color to stand out on image */
+    padding: 60px 20px; /* Padding for spacing within the header */
     text-align: center;
 }
 
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
 
+header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Navigation Styling */
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 20px;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 1rem;
     position: relative;
 }
 
 nav ul li a {
-    color: rgb(0, 0, 0);
+    color: #000;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    display: inline-block;
     border-radius: 4px;
+    display: inline-block;
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
-    position: relative; /* Für die Pseudo-Elemente */
 }
 
 nav ul li a::before,
@@ -50,50 +63,48 @@ nav ul li a::after {
 }
 
 nav ul li a::before {
-    background-color: rgba(255, 255, 255, 0.1); /* Weißer Überlagerungseffekt */
-    transform: scale(0.5) translateY(-20px); /* 3D-Effekt: Skalierung und Anheben */
-}
-
-nav ul li a::after {
-    border: 2px solid transparent;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(0.5) translateY(-20px);
 }
 
 nav ul li a:hover {
     background-color: #3047ba;
-    color: rgb(255, 255, 255);
+    color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px); /* Um den Button leicht anzuheben */
+    transform: translateY(-3px);
 }
 
 nav ul li a:hover::before {
-    transform: scale(1) translateY(-10px); /* 3D-Effekt bei Hover */
-    opacity: 0; /* Verstecken des weißen Überlagerungseffekts */
+    transform: scale(1) translateY(-10px);
+    opacity: 0;
 }
 
 nav ul li a:hover::after {
-    border-color: #3047ba; /* Farbe für den Rahmen beim Hover */
-    transform: scale(1.05); /* Rahmen etwas vergrößern */
+    border-color: #3047ba;
+    transform: scale(1.05);
 }
 
-/* Spezifische Anpassungen für die Login-Seite */
+/* Login Page Styles */
 #login-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #f8f9fa;
+    padding: 20px;
 }
 
 #login-form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
+    max-width: 320px;
     padding: 2rem;
-    background-color: white;
+    background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
-    margin: auto;
+    border-radius: 8px;
 }
 
 #login-form:hover {
@@ -102,38 +113,39 @@ nav ul li a:hover::after {
 
 #login-form label {
     margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 #login-form input {
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s;
     width: 100%;
-    box-sizing: border-box;
 }
 
 #login-form input:focus {
-    border-color: #4CAF50;
+    border-color: #3047ba;
+    outline: none;
 }
 
 #login-form button {
-    padding: 0.5rem;
-    background-color: #4CAF50;
-    color: white;
+    padding: 0.75rem;
+    background-color: #3047ba;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 #login-form button:hover {
-    background-color: #45a049;
+    background-color: #253580;
 }
 
+/* Error Message Styling */
 .error {
     color: red;
     display: none;
@@ -143,4 +155,20 @@ nav ul li a:hover::after {
 .error.show {
     display: block;
     opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #login-form {
+        padding: 1.5rem;
+    }
 }
