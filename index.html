@@ -54,9 +54,11 @@
 
             <section id="'Hasching-Demo" class="page" style="display:none;">
                 <h2>Hashing-Demo: SHA-256 in Aktion</h2>
-                <p>Geben Sie beliebige Daten ein, um den SHA-256-Hash-Wert zu sehen. Beachten Sie, wie jeder kleine Unterschied in der Eingabe den Hash-Wert komplett verändert..</p>
+                <p>Leider ist diese Funktion aus Technischen Gründen zur Zeit nicht verfügbar.</p>
+                    <p>In Kürzester Zeit wird dieses Problem behoben</p>
+                <!--<p>Geben Sie beliebige Daten ein, um den SHA-256-Hash-Wert zu sehen. Beachten Sie, wie jeder kleine Unterschied in der Eingabe den Hash-Wert komplett verändert..</p>
                 <input type="text" id="hashInput" placeholder="Geben Sie Daten ein" oninput="generateHash()">
-                <p id="hashOutput">SHA-256 Hash-Wert: <span id="hashResult">-</span></p>
+                <p id="hashOutput">SHA-256 Hash-Wert: <span id="hashResult">-</span></p>-->
             </section>
             
             <section id="SHA_256 Wichtig?" class="page" style="display:none;">
@@ -143,9 +145,9 @@
         </p>
             </section>
             <footer class="footer">
-                <p>© 2024 Blockchain Technologie by Rameen Miran. Alle Rechte vorbehalten.</p>
+                <p>© 2024 Blockchain Technologie von Rameen Miran. Alle Rechte vorbehalten.</p>
             </footer>
-            <!-- <script src="script.js"></script> -->
+            <script src="script.js"></script>
         </main>
     </div>
     <script>
@@ -155,7 +157,7 @@
             const password = document.getElementById('password').value;
             const errorElement = document.getElementById('login-error');
 
-            if (username === 'test' && password === 'test') {
+            if (username === 'blockchain' && password === 'Informatik') {
                 document.getElementById('login-page').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
             } else {
