@@ -38,7 +38,7 @@ function login(event) {
     const password = document.getElementById('password').value;
     const errorElement = document.getElementById('login-error');
 
-    if (username === 'test' && password === 'test') {
+    if (username === 'blockchain' && password === 'informatik') {
         document.getElementById('login-page').classList.remove('active');
         document.getElementById('main-content').classList.add('active');
         showPage('home');
