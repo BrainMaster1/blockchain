@@ -1,5 +1,3 @@
-// login.js
-
 document.addEventListener('DOMContentLoaded', () => {
     // Show login page by default when content is loaded
     showPage('login-page');
@@ -14,14 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 function showPage(pageId) {
     // Hide all pages
     const pages = document.querySelectorAll('.page');
-    pages.forEach(page => {
-        page.classList.remove('active');
-    });
+    pages.forEach(page => page.style.display = 'none');
 
     // Show the selected page
     const activePage = document.getElementById(pageId);
     if (activePage) {
-        activePage.classList.add('active');
+        activePage.style.display = 'block';
     }
 }
 
@@ -36,12 +32,13 @@ function handleLogin(event) {
     const validUsername = 'test';
     const validPassword = 'test';
 
+    // Hide error message on each login attempt
+    errorElement.style.display = 'none';
+
     // Check if credentials match
     if (username === validUsername && password === validPassword) {
         // Hide login page and show main content
-        document.getElementById('login-page').classList.remove('active');
-        document.getElementById('main-content').classList.add('active');
-        showPage('home');
+        showPage('main-content');
     } else {
         // Show error message if credentials are incorrect
         errorElement.style.display = 'block';
