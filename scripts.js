@@ -12,13 +12,25 @@ function showPage(pageId) {
     }
 }
 
-async function generateHash() { 
+async function generateHash() {
     const input = document.getElementById("hashInput").value;
+    const hashResultElement = document.getElementById("hashResult");
+
+    // Wenn das Input-Feld leer ist, Hash zurücksetzen
+    if (input.trim() === "") {
+        hashResultElement.innerText = "-"; // Leeren Wert anzeigen
+        return;
+    }
+
+    // Generiere den SHA-256 Hash
     const hashBuffer = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(input));
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    document.getElementById("hashResult").innerText = hashHex;
-}
+
+    console.log(hashHex)
+    // Zeige den generierten Hash an
+    hashResultElement.innerText = hashHex;
+} 
 
 function login(event) {
     event.preventDefault();
